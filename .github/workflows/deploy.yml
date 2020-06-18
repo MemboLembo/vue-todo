@@ -18,7 +18,7 @@ jobs:
     - name: Build
       run: yarn build
     - name: Bundle
-      run: mkdir ./out && mv build ./out/vue-todo
+      run: mkdir ./out && mv dist ./out/vue-todo
       
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
