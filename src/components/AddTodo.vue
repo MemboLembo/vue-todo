@@ -32,6 +32,8 @@ export default {
 <style scoped>
   form {
     display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 
   input {

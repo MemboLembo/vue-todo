@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   li {
     border: 1px solid #ccc;
     display: flex;
@@ -45,6 +45,8 @@ export default {
     color: #fff;
     border-radius: 50%;
     font-weight: bold;
+    width: 30px;
+    height: 30px;
   }
 
   .done {
