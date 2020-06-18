@@ -1,0 +1,30 @@
+name: CD
+
+on: 
+  push:
+    branches:    
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Install
+      run: yarn
+    - name: Build
+      run: yarn build
+    - name: Bundle
+      run: mkdir ./out && mv build ./out/vue-todo
+      
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.DEPLOY_TOKEN }}
+        external_repository: MemboLembo/MemboLembo.github.io
+        publish_dir: ./out
+        publish_branch: master
+        keep_files: true
