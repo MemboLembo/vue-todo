@@ -8,9 +8,11 @@
     />
     <hr>
     <TodoList
+    v-if="todos.length"
       v-bind:todos="todos"
       @remove-todo="removeTodo"
     />
+    <p v-else>No todos!</p>
   </div>
 </template>
 
@@ -25,7 +27,7 @@ export default {
     };
   },
   mounted() {
-    fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=3')
       .then(response => response.json())
       .then(json => {
         this.todos = json
